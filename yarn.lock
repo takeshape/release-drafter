@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@actions/core@^1.2.0":
+"@actions/core@^1.1.3", "@actions/core@^1.2.0":
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.2.4.tgz#96179dbf9f8d951dd74b40a0dbd5c22555d186ab"
   integrity sha512-YJCEq8BE3CdN8+7HPZ/4DxJjk/OkZV2FFIf+DlZTC/4iBlzYCD5yjRR6eiOS5llO11zbRltIRuKAjMKaWTE6cg==
@@ -922,6 +922,11 @@
   integrity sha512-9T1auFmbPZoxHz0enUFlUuKRy3it01R+hlggyVUMtnCTQRunsQYifnSGb8hET4Xo8yiC0o0r1paW3ud5+rbURg==
   dependencies:
     "@types/yargs-parser" "*"
+
+"@vercel/ncc@^0.23.0":
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.23.0.tgz#628f293f8ae2038d004378f864396ad8fc14380c"
+  integrity sha512-Fcr1qlG9t54X4X9qbo/+jr1+t5Qc6H3TgIRBXmKkF/WDs6YFulAN6ilq2Ehx38RbgIOFxaZnjlAQ50GyexnMpQ==
 
 abab@^2.0.3:
   version "2.0.3"
@@ -4704,10 +4709,63 @@ pretty-format@^26.0.1:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
+probot-actions-adapter@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/probot-actions-adapter/-/probot-actions-adapter-1.0.4.tgz#c3fd5d75bc007b83bd862e090897ea151465b163"
+  integrity sha512-hvEe6FJWB2Z5w9bPryoJlypmxusywS4RP/r8o84pKS4qRI116+J61V+/Zd1vTpTtxis2Ns44q3xeYJnOoaLMpw==
+  dependencies:
+    "@actions/core" "^1.1.3"
+    probot "^9.5.3"
+    uuid "^3.3.3"
+
 probot@9.11.5:
   version "9.11.5"
   resolved "https://registry.yarnpkg.com/probot/-/probot-9.11.5.tgz#2a27eb37cdd2cf22b757e8dc689ad589b397d2af"
   integrity sha512-t7OoWyIkMlFcFxjywF/Oq0i093FU0RD93xWF4TOXTjyossXwVnBFDJ4jyb303VCkuwGgoNO4Uz/fdKRnC6ILgg==
+  dependencies:
+    "@octokit/app" "^4.0.0"
+    "@octokit/graphql" "^4.2.0"
+    "@octokit/plugin-enterprise-compatibility" "^1.2.1"
+    "@octokit/plugin-retry" "^3.0.1"
+    "@octokit/plugin-throttling" "^3.0.0"
+    "@octokit/request" "^5.1.0"
+    "@octokit/rest" "^16.43.1"
+    "@octokit/webhooks" "^6.0.0"
+    "@types/bunyan" "^1.8.4"
+    "@types/express" "^4.17.2"
+    "@types/ioredis" "^4.0.6"
+    "@types/supports-color" "^5.3.0"
+    bottleneck "^2.15.3"
+    bunyan "^1.8.12"
+    bunyan-format "^0.2.1"
+    bunyan-sentry-stream "^1.1.0"
+    cache-manager "^3.0.0"
+    commander "^5.0.0"
+    deepmerge "^4.1.0"
+    dotenv "~8.2.0"
+    eventsource "^1.0.7"
+    express "^4.16.2"
+    express-async-errors "^3.0.0"
+    hbs "^4.1.1"
+    ioredis "^4.5.1"
+    is-base64 "^1.1.0"
+    js-yaml "^3.13.1"
+    jsonwebtoken "^8.1.0"
+    octokit-pagination-methods "1.1.0"
+    pkg-conf "^3.0.0"
+    promise-events "^0.1.3"
+    raven "^2.4.2"
+    resolve "^1.4.0"
+    semver "^7.0.0"
+    supports-color "^7.0.0"
+    update-dotenv "^1.1.0"
+    update-notifier "^4.0.0"
+    uuid "^7.0.0"
+
+probot@^9.5.3:
+  version "9.13.0"
+  resolved "https://registry.yarnpkg.com/probot/-/probot-9.13.0.tgz#91e69940cff2f7f72b41da4fe10b13fa773d6321"
+  integrity sha512-I6xNlF9Eb2N5JgOcPEmQuDcBBWfDxJlyCyGrBDGTdACjO09BNnIlPdn7tnBXuEp68IVnyJXXfrZdCxfFma8VoQ==
   dependencies:
     "@octokit/app" "^4.0.0"
     "@octokit/graphql" "^4.2.0"
@@ -5985,6 +6043,11 @@ uuid@3.3.2, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
+
+uuid@^3.3.3:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
+  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 uuid@^7.0.0, uuid@^7.0.3:
   version "7.0.3"

@@ -12,7 +12,7 @@ const { sortPullRequests } = require('./lib/sort-pull-requests')
 const log = require('./lib/log')
 const core = require('@actions/core')
 
-const probot = (app) => {
+module.exports = (app) => {
   app.on('push', async (context) => {
     const { shouldDraft, configName, version, tag, name } = getInput()
 
@@ -124,5 +124,3 @@ function setActionOutput(releaseResponse, { body }) {
   if (name) core.setOutput('name', name)
   core.setOutput('body', body)
 }
-
-adapt(probot)
