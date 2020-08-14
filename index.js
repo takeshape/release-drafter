@@ -1,3 +1,4 @@
+const adapt = require('probot-actions-adapter')
 const { getConfig } = require('./lib/config')
 const { isTriggerableReference } = require('./lib/triggerable-reference')
 const {
@@ -11,7 +12,7 @@ const { sortPullRequests } = require('./lib/sort-pull-requests')
 const log = require('./lib/log')
 const core = require('@actions/core')
 
-module.exports = (app) => {
+const probot = (app) => {
   app.on('push', async (context) => {
     const { shouldDraft, configName, version, tag, name } = getInput()
 
@@ -123,3 +124,5 @@ function setActionOutput(releaseResponse, { body }) {
   if (name) core.setOutput('name', name)
   core.setOutput('body', body)
 }
+
+adapt(probot)
