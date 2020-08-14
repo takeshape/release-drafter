@@ -1,4 +1,3 @@
-const adapt = require('probot-actions-adapter')
 const { getConfig } = require('./lib/config')
 const { isTriggerableReference } = require('./lib/triggerable-reference')
 const {
