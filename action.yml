@@ -38,6 +38,9 @@ inputs:
       A boolean indicating whether the relase being created or updated is a prerelease.
     required: false
     default: ''
+  target-commitish:
+    description: A commitish value for this release to target.
+    required: false
 outputs:
   id:
     description: The ID of therelease that was created or updated.
