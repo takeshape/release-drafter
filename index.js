@@ -13,7 +13,14 @@ const core = require('@actions/core')
 
 module.exports = (app) => {
   app.on('push', async (context) => {
-    const { shouldDraft, configName, version, tag, name, targetCommitish } = getInput()
+    const {
+      shouldDraft,
+      configName,
+      version,
+      tag,
+      name,
+      targetCommitish,
+    } = getInput()
 
     const config = await getConfig({
       app,
@@ -63,7 +70,9 @@ module.exports = (app) => {
       shouldDraft,
       targetCommitish,
     })
-    
+
+    core.info(JSON.stringify(releaseInfo))
+
     let createOrUpdateReleaseResponse
     if (!draftRelease) {
       log({ app, context, message: 'Creating new release' })
