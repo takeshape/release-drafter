@@ -64,8 +64,6 @@ module.exports = (app) => {
       targetCommitish,
     })
     
-    console.log(releaseInfo)
-
     let createOrUpdateReleaseResponse
     if (!draftRelease) {
       log({ app, context, message: 'Creating new release' })
