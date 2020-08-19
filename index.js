@@ -63,6 +63,8 @@ module.exports = (app) => {
       shouldDraft,
       targetCommitish,
     })
+    
+    console.log(releaseInfo)
 
     let createOrUpdateReleaseResponse
     if (!draftRelease) {
