@@ -22,6 +22,9 @@ module.exports = (app) => {
       targetCommitish,
     } = getInput()
 
+    core.info('hello!')
+    core.info(targetCommitish)
+
     const config = await getConfig({
       app,
       context,
@@ -30,7 +33,11 @@ module.exports = (app) => {
 
     const { isPreRelease } = getInput({ config })
 
+    core.info('a')
+
     if (config === null) return
+
+    core.info('b')
 
     // GitHub Actions merge payloads slightly differ, in that their ref points
     // to the PR branch instead of refs/heads/master
@@ -39,6 +46,8 @@ module.exports = (app) => {
     if (!isTriggerableReference({ ref, app, context, config })) {
       return
     }
+
+    core.info('c')
 
     const { draftRelease, lastRelease } = await findReleases({ app, context })
     const {
@@ -52,11 +61,15 @@ module.exports = (app) => {
       config,
     })
 
+    core.info('d')
+
     const sortedMergedPullRequests = sortPullRequests(
       mergedPullRequests,
       config['sort-by'],
       config['sort-direction']
     )
+
+    core.info('e')
 
     const releaseInfo = generateReleaseInfo({
       commits,
